@@ -1,7 +1,6 @@
 const content = {
-  tagline: 'Yo Yo',
-  title: 'Ethenas Blog',
-  subtitle: 'Fancy Fancy',
+  tagline: 'I’m Ethena Lee, a software engineer in Toronto',
+  title: 'Ethena’s Blog',
 };
 
 export default content;

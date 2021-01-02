@@ -13,7 +13,7 @@ type Props = {
 const Illustration = ({ classes, data }: Props) => (
   <div className={classes.container}>
     {data.image ? <Img fluid={data.image.fluid} /> : null}
-    <Typography variant='h2' color='textPrimary'>
+    <Typography variant='h4' color='textPrimary' align='center'>
       {data.description}
     </Typography>
   </div>

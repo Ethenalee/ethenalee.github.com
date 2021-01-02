@@ -1,27 +1,38 @@
 import React from 'react';
-import Typography from '@material-ui/core/Typography';
-import Fade from '@material-ui/core/Fade';
+import { withStyles } from '@material-ui/styles';
+import { Typography, Fade, Container } from '@material-ui/core';
 
 import { Animated } from 'components';
 
 import content from './content';
+import styles from './style';
 
-const { tagline, title, subtitle } = content;
+const { tagline, title } = content;
 
-const Welcome = () => (
-  <>
-    <Typography variant='h3' color='textPrimary'>
-      {tagline}
-    </Typography>
-    <Fade in timeout={1000}>
-      <Typography variant='h1' color='textPrimary'>
-        <Animated>{title}</Animated>
+type Props = {
+  classes: Object,
+};
+
+const Welcome = ({ classes }: Props) => (
+  <div className={classes.container}>
+    <Container className={classes.typographyContainer}>
+      <Typography
+        variant='h3'
+        color='textPrimary'
+        className={classes.typography}>
+        {tagline}
       </Typography>
-    </Fade>
-    <Typography variant='h3' color='textPrimary'>
-      {subtitle}
-    </Typography>
-  </>
+      <Fade in timeout={1000}>
+        <Typography
+          variant='h1'
+          color='textPrimary'
+          className={classes.typography}>
+          <Animated>{title}</Animated>
+        </Typography>
+      </Fade>
+    </Container>
+    <Container className={classes.image} />
+  </div>
 );
 
-export default Welcome;
+export default withStyles(styles)(Welcome);

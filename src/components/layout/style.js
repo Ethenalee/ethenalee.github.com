@@ -1,4 +1,4 @@
-const styles = ({ app, breakpoints, typography }) => ({
+const styles = ({ breakpoints, typography }) => ({
   '@global': {
     html: {
       [breakpoints.up('xl')]: {
@@ -17,15 +17,16 @@ const styles = ({ app, breakpoints, typography }) => ({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
-    margin: '0 auto',
     minHeight: '100%',
-    padding: `${typography.pxToRem(16)} ${typography.pxToRem(48)}`,
+    padding: `${typography.pxToRem(16)} ${typography.pxToRem(80)}`,
     transition: 'filter .5s, opacity .5s',
     boxSizing: 'border-box',
+    '@media (max-width: 1024px)': {
+      padding: '10%',
+      justifyContent: 'flex-start',
+    },
   },
   content: {
-    margin: 'auto',
-    maxWidth: app.maxWidth,
     width: '100%',
   },
   background: {
