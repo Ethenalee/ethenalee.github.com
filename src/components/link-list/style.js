@@ -7,12 +7,14 @@ const styles = ({ palette, typography }) => ({
     flexWrap: 'wrap',
   },
   linkText: {
-    paddingLeft: typography.pxToRem(8),
+    paddingRight: typography.pxToRem(8),
+  },
+  linkIcon: {
+    marginRight: typography.pxToRem(8),
   },
   link: {
     border: 'none',
     display: 'flex',
-    padding: `${typography.pxToRem(8)} ${typography.pxToRem(8)}`,
     textDecoration: 'none',
     color: palette.text.secondary,
   },

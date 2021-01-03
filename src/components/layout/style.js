@@ -12,6 +12,8 @@ const styles = ({ breakpoints, typography }) => ({
   scrollFix: {
     marginRight: '-17px !important',
     marginBottom: '-17px !important',
+    width: '100%',
+    height: '100%',
   },
   pageContainer: {
     display: 'flex',
@@ -22,7 +24,7 @@ const styles = ({ breakpoints, typography }) => ({
     transition: 'filter .5s, opacity .5s',
     boxSizing: 'border-box',
     '@media (max-width: 1024px)': {
-      padding: '10%',
+      padding: `${typography.pxToRem(32)}`,
       justifyContent: 'flex-start',
     },
   },
