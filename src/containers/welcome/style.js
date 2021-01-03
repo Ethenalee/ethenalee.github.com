@@ -5,7 +5,6 @@ const styles = {
     display: 'flex',
     flexDirection: 'row',
     minHeight: '80vh',
-    minWidth: '80rem',
     padding: 0,
     alignContent: 'center',
     justifyContent: 'space-between',
