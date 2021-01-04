@@ -1,7 +1,8 @@
 import React from 'react';
 import { withStyles } from '@material-ui/styles';
-
-import { Illustration } from 'components';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 import useIllustrations from './useIllustrations';
 import styles from './style';
@@ -12,13 +13,34 @@ type Props = {
 
 const IllustrationList = ({ classes }: Props) => {
   const { allContentfulIllustration } = useIllustrations();
+  const settings = {
+    customPaging: i => {
+      return (
+        <a>
+          <img
+            className={classes.image}
+            key={i}
+            src={allContentfulIllustration.edges[i].node.image.fluid.src}
+          />
+        </a>
+      );
+    },
+    dots: true,
+    dotsClass: 'slick-dots slick-thumb',
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
 
   return (
-    <div className={classes.container}>
+    <Slider {...settings}>
       {allContentfulIllustration.edges.map(({ node }, index) => (
-        <Illustration key={index} data={node} />
+        <div key={index}>
+          <img src={node.image.fluid.src} />
+        </div>
       ))}
-    </div>
+    </Slider>
   );
 };
 
