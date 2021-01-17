@@ -5,5 +5,15 @@ import Layout from './layout';
 import LinkList from './link-list';
 import Navigation from './navigation';
 import SEO from './seo';
+import Language from './language';
 
-export { Animated, BlogPost, Header, Layout, LinkList, Navigation, SEO };
+export {
+  Animated,
+  BlogPost,
+  Header,
+  Layout,
+  LinkList,
+  Navigation,
+  Language,
+  SEO,
+};

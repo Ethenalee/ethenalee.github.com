@@ -14,6 +14,7 @@ const useIllustrations = () => {
               }
               description
               publishDate
+              node_locale
             }
           }
         }

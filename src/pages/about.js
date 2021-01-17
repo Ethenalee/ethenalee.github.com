@@ -2,12 +2,13 @@ import React from 'react';
 
 import { Layout, SEO } from 'components';
 import { About } from 'containers';
+import { injectIntl } from 'gatsby-plugin-intl';
 
-const AboutPage = () => (
+const AboutPage = ({ intl }) => (
   <Layout>
-    <SEO title='About' />
+    <SEO title={intl.formatMessage({ id: 'about' })} />
     <About />
   </Layout>
 );
 
-export default AboutPage;
+export default injectIntl(AboutPage);

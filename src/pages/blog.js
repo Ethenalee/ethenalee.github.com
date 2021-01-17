@@ -2,12 +2,13 @@ import React from 'react';
 
 import { Layout, SEO } from 'components';
 import { BlogPostList } from 'containers';
+import { injectIntl } from 'gatsby-plugin-intl';
 
-const BlogPage = () => (
+const BlogPage = ({ intl }) => (
   <Layout noBackground>
-    <SEO title='Blog' />
+    <SEO title={intl.formatMessage({ id: 'blog' })} />
     <BlogPostList />
   </Layout>
 );
 
-export default BlogPage;
+export default injectIntl(BlogPage);

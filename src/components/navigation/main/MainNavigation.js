@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'gatsby-link';
 import { withStyles } from '@material-ui/styles';
+import { injectIntl, FormattedMessage } from 'gatsby-plugin-intl';
 
 import styles from './style';
 
@@ -9,20 +10,22 @@ type Props = {
   options: [],
 };
 
-const MainNavigation = ({ classes, options }: Props) => (
+const MainNavigation = ({ classes, options, intl }: Props) => (
   <ul>
     {options.map((link, i) => (
       <li className={classes.menuContainer} key={i}>
         <Link
-          to={link.to}
+          to={`/${intl.locale}${link.to}`}
           className={classes.navLink}
           activeClassName={classes.navLinkActive}
           exact={'true'}>
-          <span>{link.text}</span>
+          <span>
+            <FormattedMessage id={link.text} />
+          </span>
         </Link>
       </li>
     ))}
   </ul>
 );
 
-export default withStyles(styles)(MainNavigation);
+export default injectIntl(withStyles(styles)(MainNavigation));

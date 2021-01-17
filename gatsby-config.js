@@ -51,18 +51,6 @@ module.exports = {
         background_color: `black`,
         theme_color: `black`,
         display: `minimal-ui`,
-        icon: `src/images/favicon.png`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-react-redux`,
-      options: {
-        pathToCreateStoreModule: './src/state/store',
-        serialize: {
-          space: 0,
-          isJSON: true,
-          unsafe: false,
-        },
       },
     },
     {
@@ -71,6 +59,19 @@ module.exports = {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
         environment: process.env.CONTENTFUL_ENV,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-intl`,
+      options: {
+        // language JSON resource path
+        path: `${__dirname}/src/intl`,
+        // supported language
+        languages: [`en`, `kr`],
+        // language file path
+        defaultLanguage: `en`,
+        // option to redirect to `/en` when connecting `/`
+        redirect: true,
       },
     },
   ],

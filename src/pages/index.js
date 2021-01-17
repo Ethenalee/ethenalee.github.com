@@ -1,13 +1,14 @@
 import React from 'react';
+import { injectIntl } from 'gatsby-plugin-intl';
 
 import { Layout, SEO } from 'components';
 import { Welcome } from 'containers';
 
-const IndexPage = () => (
+const IndexPage = ({ intl }) => (
   <Layout>
-    <SEO title='Home' />
+    <SEO ttitle={intl.formatMessage({ id: 'title' })} />
     <Welcome />
   </Layout>
 );
 
-export default IndexPage;
+export default injectIntl(IndexPage);

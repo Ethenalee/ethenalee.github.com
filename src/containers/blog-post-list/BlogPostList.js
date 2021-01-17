@@ -1,5 +1,6 @@
 import React from 'react';
 import { withStyles } from '@material-ui/styles';
+import { injectIntl } from 'gatsby-plugin-intl';
 
 import { BlogPost } from 'components';
 
@@ -10,16 +11,19 @@ type Props = {
   classes: Object,
 };
 
-const BlogPostList = ({ classes }: Props) => {
+const BlogPostList = ({ classes, intl }: Props) => {
   const { allContentfulBlogPost } = useBlogPosts();
 
   return (
     <div className={classes.container}>
-      {allContentfulBlogPost.edges.map(({ node }, index) => (
-        <BlogPost key={index} data={node} />
-      ))}
+      {allContentfulBlogPost.edges.map(
+        ({ node }, index) =>
+          node?.node_locale?.toLowerCase().includes(intl.locale) && (
+            <BlogPost key={index} data={node} />
+          )
+      )}
     </div>
   );
 };
 
-export default withStyles(styles)(BlogPostList);
+export default injectIntl(withStyles(styles)(BlogPostList));

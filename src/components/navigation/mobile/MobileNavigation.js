@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'gatsby-link';
 import { withStyles } from '@material-ui/styles';
 import { FaBars } from 'react-icons/fa';
+import { injectIntl, FormattedMessage } from 'gatsby-plugin-intl';
 
 import styles from './style';
 
@@ -12,7 +13,7 @@ type Props = {
   onClick: () => void,
 };
 
-const MobileNavigation = ({ classes, options, onClick, open }: Props) => (
+const MobileNavigation = ({ classes, options, onClick, open, intl }: Props) => (
   <>
     <FaBars className={classes.menuIcon} onClick={onClick} />
     {open && (
@@ -20,11 +21,13 @@ const MobileNavigation = ({ classes, options, onClick, open }: Props) => (
         {options.map((link, i) => (
           <div key={i}>
             <Link
-              to={link.to}
+              to={`${intl.local}${link.to}`}
               className={classes.navLink}
               activeClassName={classes.navLinkActive}
               exact={'true'}>
-              <span>{link.text}</span>
+              <span>
+                <FormattedMessage id={link.text} />
+              </span>
             </Link>
           </div>
         ))}
@@ -33,4 +36,4 @@ const MobileNavigation = ({ classes, options, onClick, open }: Props) => (
   </>
 );
 
-export default withStyles(styles)(MobileNavigation);
+export default injectIntl(withStyles(styles)(MobileNavigation));

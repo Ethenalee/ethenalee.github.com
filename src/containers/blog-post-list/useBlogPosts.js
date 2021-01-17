@@ -19,6 +19,7 @@ const useBlogPosts = () => {
                   ...GatsbyContentfulFluid_withWebp
                 }
               }
+              node_locale
             }
           }
         }
