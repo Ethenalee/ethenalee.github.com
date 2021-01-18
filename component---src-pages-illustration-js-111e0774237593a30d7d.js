@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[10],{"2WQK":function(e,t,n){"use strict";n.r(t);var a=n("q1tI"),c=n.n(a),r=n("kCIJ"),i=n("Kvkj"),l=n("8cBu");t.default=Object(r.injectIntl)((function(e){var t=e.intl;return c.a.createElement(i.e,{noBackground:!0},c.a.createElement(i.h,{title:t.formatMessage({id:"illustration"})}),c.a.createElement(l.c,null))}))}}]);
+//# sourceMappingURL=component---src-pages-illustration-js-111e0774237593a30d7d.js.map
