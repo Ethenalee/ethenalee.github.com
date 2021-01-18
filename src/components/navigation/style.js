@@ -1,8 +1,9 @@
+import { FaFileExcel } from 'react-icons/fa';
+
 const styles = ({ palette, typography }) => ({
   container: {
     display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'flex-end',
     listStyle: 'none',
     margin: 0,
     padding: 0,

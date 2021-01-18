@@ -14,14 +14,14 @@ type Props = {
 };
 
 const MobileNavigation = ({ classes, options, onClick, open, intl }: Props) => (
-  <>
-    <FaBars className={classes.menuIcon} onClick={onClick} />
+  <div className={classes.menuIcon}>
+    <FaBars onClick={onClick} />
     {open && (
       <div className={classes.menuContainer}>
         {options.map((link, i) => (
           <div key={i}>
             <Link
-              to={`${intl.local}${link.to}`}
+              to={`/${intl.locale}${link.to}`}
               className={classes.navLink}
               activeClassName={classes.navLinkActive}
               exact={'true'}>
@@ -33,7 +33,7 @@ const MobileNavigation = ({ classes, options, onClick, open, intl }: Props) => (
         ))}
       </div>
     )}
-  </>
+  </div>
 );
 
 export default injectIntl(withStyles(styles)(MobileNavigation));

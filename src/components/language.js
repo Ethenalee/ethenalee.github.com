@@ -7,7 +7,11 @@ const languageName = {
 };
 
 const Language = () => (
-  <div>
+  <div
+    style={{
+      display: 'flex',
+      justifyContent: `flex-end`,
+    }}>
     <IntlContextConsumer>
       {({ languages, language: currentLocale }) =>
         languages.map(language => (
@@ -15,10 +19,10 @@ const Language = () => (
             key={language}
             onClick={() => changeLocale(language)}
             style={{
-              color: currentLocale === language ? `yellow` : `white`,
-              margin: 10,
-              textDecoration: `underline`,
+              fontWeight: currentLocale === language ? 700 : 300,
               cursor: `pointer`,
+              padding: '2%',
+              wordBreak: 'keep-all',
             }}>
             {languageName[language]}
           </a>

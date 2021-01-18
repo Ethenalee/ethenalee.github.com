@@ -11,7 +11,7 @@ type Props = {
 };
 
 const MainNavigation = ({ classes, options, intl }: Props) => (
-  <ul>
+  <ul className={classes.ul}>
     {options.map((link, i) => (
       <li className={classes.menuContainer} key={i}>
         <Link

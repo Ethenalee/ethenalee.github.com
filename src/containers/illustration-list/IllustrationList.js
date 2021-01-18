@@ -41,7 +41,7 @@ const IllustrationList = ({ classes, intl }: Props) => {
         ({ node }, index) =>
           node?.node_locale?.toLowerCase().includes(intl.locale) && (
             <div key={index}>
-              <img src={node.image.fluid.src} />
+              <img src={node.image.fluid.src} className={classes.mainImage} />
             </div>
           )
       )}

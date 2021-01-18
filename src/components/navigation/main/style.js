@@ -13,6 +13,9 @@ const styles = ({ palette, typography }) => ({
   navLinkActive: {
     borderBottom: `${typography.pxToRem(2)} solid ${palette.primary.main}`,
   },
+  ul: {
+    margin: 0,
+  },
 });
 
 export default styles;

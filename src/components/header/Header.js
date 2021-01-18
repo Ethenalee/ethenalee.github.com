@@ -9,7 +9,7 @@ import styles from './style';
 
 const Header = ({ classes }) => (
   <header className={classes.container}>
-    <div>
+    <div className={classes.content}>
       <Language />
       <Navigation />
     </div>
