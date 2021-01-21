@@ -1,5 +1,6 @@
 import React from 'react';
 import { withStyles } from '@material-ui/styles';
+import { injectIntl, FormattedMessage } from 'gatsby-plugin-intl';
 
 import styles from './style';
 
@@ -8,7 +9,7 @@ type Props = {
   links: [],
 };
 
-const LinkList = ({ classes, links }: Props) => (
+const LinkList = ({ classes, links, intl }: Props) => (
   <div>
     <ul className={classes.container}>
       {links.map(({ Icon, to, newTab, text }, index) => (
@@ -18,7 +19,9 @@ const LinkList = ({ classes, links }: Props) => (
             target={newTab ? '_blank' : '_self'}
             className={classes.link}>
             <Icon className={classes.linkIcon} />
-            <span className={classes.linkText}>{text}</span>
+            <span className={classes.linkText}>
+              <FormattedMessage id='name' />
+            </span>
           </a>
         </li>
       ))}
@@ -26,4 +29,4 @@ const LinkList = ({ classes, links }: Props) => (
   </div>
 );
 
-export default withStyles(styles)(LinkList);
+export default injectIntl(withStyles(styles)(LinkList));

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Typography, Fade } from '@material-ui/core';
 import { withStyles } from '@material-ui/styles';
+import { injectIntl, FormattedMessage } from 'gatsby-plugin-intl';
 
 import { Animated, LinkList } from 'components';
 
@@ -17,14 +18,16 @@ const About = ({ classes }: Props) => (
   <div className={classes.container}>
     <Fade in timeout={1000}>
       <Typography variant='h1' color='textPrimary'>
-        <Animated>{title}</Animated>
+        <Animated>
+          <FormattedMessage id='aboutTitle' />
+        </Animated>
       </Typography>
     </Fade>
     <Typography variant='h3' color='textPrimary'>
-      {subtitle}
+      <FormattedMessage id='aboutSubTitle' />
     </Typography>
     <LinkList links={links} />
   </div>
 );
 
-export default withStyles(styles)(About);
+export default injectIntl(withStyles(styles)(About));
