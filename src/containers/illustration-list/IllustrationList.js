@@ -1,5 +1,6 @@
 import React from 'react';
 import { withStyles } from '@material-ui/styles';
+import Typography from '@material-ui/core/Typography';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -23,7 +24,7 @@ const IllustrationList = ({ classes, intl }: Props) => {
         <img
           className={classes.image}
           key={i}
-          src={filteredImages[i].node.image.fluid.src}
+          src={filteredImages[i].node.image.fixed.src}
         />
       </a>
     ),
@@ -41,7 +42,19 @@ const IllustrationList = ({ classes, intl }: Props) => {
         ({ node }, index) =>
           node?.node_locale?.toLowerCase().includes(intl.locale) && (
             <div key={index}>
-              <img src={node.image.fluid.src} className={classes.mainImage} />
+              <img className={classes.mainImage} src={node.image.fixed.src} />
+              <Typography
+                className={classes.typo}
+                variant='h2'
+                color='textPrimary'>
+                {node.title}
+              </Typography>
+              <Typography
+                className={classes.typo}
+                variant='h3'
+                color='textPrimary'>
+                {node.description}
+              </Typography>
             </div>
           )
       )}

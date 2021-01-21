@@ -8,10 +8,11 @@ const useIllustrations = () => {
           edges {
             node {
               image {
-                fluid(maxWidth: 960) {
-                  ...GatsbyContentfulFluid_withWebp
+                fixed(width: 960, height: 1200) {
+                  ...GatsbyContentfulFixed_withWebp
                 }
               }
+              title
               description
               publishDate
               node_locale
