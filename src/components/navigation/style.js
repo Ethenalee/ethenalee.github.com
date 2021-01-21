@@ -1,5 +1,3 @@
-import { FaFileExcel } from 'react-icons/fa';
-
 const styles = ({ palette, typography }) => ({
   container: {
     display: 'flex',

@@ -8,7 +8,7 @@ import { Animated, LinkList } from 'components';
 import content from './content';
 import styles from './style';
 
-const { title, subtitle, links } = content;
+const { links } = content;
 
 type Props = {
   classes: Object,
