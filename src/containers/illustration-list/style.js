@@ -5,8 +5,10 @@ const styles = () => ({
   },
   mainImage: {
     margin: 'auto',
-    width: '100%',
-    height: '100%',
+    width: '60%',
+    '@media (max-width: 1024px)': {
+      width: '100%',
+    },
   },
   typo: {
     textAlign: 'center',
