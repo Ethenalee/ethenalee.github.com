@@ -5,13 +5,27 @@ const styles = () => ({
   },
   mainImage: {
     margin: 'auto',
-    width: '60%',
+    width: '40%',
     '@media (max-width: 1024px)': {
       width: '100%',
     },
   },
-  typo: {
+  title: {
     textAlign: 'center',
+    fontSize: '2rem',
+    fontWeight: '700',
+    padding: '1.5%',
+    '@media (max-width: 1024px)': {
+      paddingTop: '10%',
+      fontSize: '1.3rem',
+    },
+  },
+  description: {
+    textAlign: 'center',
+    fontSize: '1.2rem',
+    '@media (max-width: 1024px)': {
+      fontSize: '0.8rem',
+    },
   },
 });
 

@@ -7,7 +7,7 @@ const styles = {
     minHeight: '80vh',
     padding: 0,
     alignContent: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
     '@media (max-width: 1024px)': {
       minWidth: 'auto',
       alignContent: 'center',
@@ -34,6 +34,11 @@ const styles = {
       paddingBottom: '2%',
     },
   },
+  name: {
+    '@media (max-width: 1024px)': {
+      margin: 'auto',
+    },
+  },
   image: {
     backgroundImage: `url(${illustration})`,
     backgroundSize: 'contain',
@@ -42,10 +47,10 @@ const styles = {
     flexDirection: 'column',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
-    width: '45%',
+    width: '30%',
     '@media (max-width: 1024px)': {
       width: '100%',
-      height: '450px',
+      height: '300px',
     },
     margin: 0,
   },

@@ -1,5 +1,6 @@
 import React from 'react';
 import { IntlContextConsumer, changeLocale } from 'gatsby-plugin-intl';
+import Button from '@material-ui/core/Button';
 
 const languageName = {
   en: 'English',
@@ -15,7 +16,7 @@ const Language = () => (
     <IntlContextConsumer>
       {({ languages, language: currentLocale }) =>
         languages.map(language => (
-          <a
+          <Button
             key={language}
             onClick={() => changeLocale(language)}
             style={{
@@ -25,7 +26,7 @@ const Language = () => (
               wordBreak: 'keep-all',
             }}>
             {languageName[language]}
-          </a>
+          </Button>
         ))
       }
     </IntlContextConsumer>

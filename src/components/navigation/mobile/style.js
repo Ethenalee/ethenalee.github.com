@@ -8,6 +8,7 @@ const styles = ({ palette, typography }) => ({
     right: typography.pxToRem(-8),
     textAlign: 'right',
     padding: `${typography.pxToRem(16)} ${typography.pxToRem(8)}`,
+    backgroundColor: 'white',
   },
   navLink: {
     border: 'none',

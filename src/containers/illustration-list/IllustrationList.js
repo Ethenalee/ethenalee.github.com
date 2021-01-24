@@ -20,11 +20,12 @@ const IllustrationList = ({ classes, intl }: Props) => {
   );
   const settings = {
     customPaging: i => (
-      <a>
+      <a href={filteredImages[i].node.image.fixed.src}>
         <img
           className={classes.image}
           key={i}
           src={filteredImages[i].node.image.fixed.src}
+          alt={filteredImages[i].node.title}
         />
       </a>
     ),
@@ -42,17 +43,13 @@ const IllustrationList = ({ classes, intl }: Props) => {
         ({ node }, index) =>
           node?.node_locale?.toLowerCase().includes(intl.locale) && (
             <div key={index}>
-              <img className={classes.mainImage} src={node.image.fixed.src} />
-              <Typography
-                className={classes.typo}
-                variant='h2'
-                color='textPrimary'>
-                {node.title}
-              </Typography>
-              <Typography
-                className={classes.typo}
-                variant='h3'
-                color='textPrimary'>
+              <img
+                className={classes.mainImage}
+                src={node.image.fixed.src}
+                alt={node.title}
+              />
+              <Typography className={classes.title}>{node.title}</Typography>
+              <Typography className={classes.description}>
                 {node.description}
               </Typography>
             </div>

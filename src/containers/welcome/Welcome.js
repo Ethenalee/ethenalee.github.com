@@ -32,7 +32,7 @@ const Welcome = ({ classes, intl }: Props) => {
               <Typography
                 variant='h1'
                 color='textPrimary'
-                className={classes.typography}>
+                className={classes.name}>
                 <Animated>{node.name}</Animated>
               </Typography>
             </Fade>
