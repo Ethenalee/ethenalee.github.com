@@ -5,7 +5,7 @@ const styles = () => ({
   },
   mainImage: {
     margin: 'auto',
-    width: '30%',
+    width: '25%',
     '@media (max-width: 800px)': {
       width: '100%',
     },
