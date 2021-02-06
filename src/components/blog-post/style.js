@@ -1,10 +1,12 @@
 const styles = ({ typography }) => ({
   container: {
     padding: `${typography.pxToRem(16)} 0`,
-    width: '50%',
     margin: 'auto',
-    '@media (max-width: 1024px)': {
+    minHeight: '70vh',
+    minWidth: '100%',
+    '@media (max-width: 800px)': {
       width: '80%',
+      minHeight: '60vh',
     },
   },
 });

@@ -15,10 +15,11 @@ const useBlogPosts = () => {
                 }
               }
               heroImage {
-                fluid(maxWidth: 960) {
-                  ...GatsbyContentfulFluid_withWebp
+                fixed(width: 250) {
+                  ...GatsbyContentfulFixed_withWebp
                 }
               }
+              tags
               node_locale
             }
           }

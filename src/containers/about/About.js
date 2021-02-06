@@ -17,13 +17,13 @@ type Props = {
 const About = ({ classes }: Props) => (
   <div className={classes.container}>
     <Fade in timeout={1000}>
-      <Typography variant='h1' color='textPrimary'>
+      <Typography className={classes.title}>
         <Animated>
           <FormattedMessage id='aboutTitle' />
         </Animated>
       </Typography>
     </Fade>
-    <Typography variant='h3' color='textPrimary'>
+    <Typography className={classes.subTitle}>
       <FormattedMessage id='aboutSubTitle' />
     </Typography>
     <LinkList links={links} />

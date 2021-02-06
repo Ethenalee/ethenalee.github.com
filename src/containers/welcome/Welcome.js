@@ -21,18 +21,13 @@ const Welcome = ({ classes, intl }: Props) => {
         <div className={classes.container}>
           <Container className={classes.typographyContainer}>
             <Typography
-              variant='h3'
-              color='textPrimary'
               className={classes.typography}
               dangerouslySetInnerHTML={{
                 __html: node.description.childMarkdownRemark.html,
               }}
             />
             <Fade in timeout={1000}>
-              <Typography
-                variant='h1'
-                color='textPrimary'
-                className={classes.name}>
+              <Typography className={classes.name}>
                 <Animated>{node.name}</Animated>
               </Typography>
             </Fade>

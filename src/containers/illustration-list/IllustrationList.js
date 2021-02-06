@@ -2,8 +2,8 @@ import React from 'react';
 import { withStyles } from '@material-ui/styles';
 import Typography from '@material-ui/core/Typography';
 import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import './slick/slick.css';
+import './slick/slick-theme.css';
 import { injectIntl } from 'gatsby-plugin-intl';
 
 import useIllustrations from './useIllustrations';
@@ -15,17 +15,17 @@ type Props = {
 
 const IllustrationList = ({ classes, intl }: Props) => {
   const { allContentfulIllustration } = useIllustrations();
-  const filteredImages = allContentfulIllustration.edges.filter(({ node }) =>
+  const filteredData = allContentfulIllustration.edges.filter(({ node }) =>
     node.node_locale.toLowerCase().includes(intl.locale)
   );
   const settings = {
     customPaging: i => (
-      <a href={filteredImages[i].node.image.fixed.src}>
+      <a href={filteredData[i].node.image.fixed.src}>
         <img
           className={classes.image}
           key={i}
-          src={filteredImages[i].node.image.fixed.src}
-          alt={filteredImages[i].node.title}
+          src={filteredData[i].node.image.fixed.src}
+          alt={filteredData[i].node.title}
         />
       </a>
     ),
@@ -39,22 +39,19 @@ const IllustrationList = ({ classes, intl }: Props) => {
 
   return (
     <Slider {...settings}>
-      {allContentfulIllustration.edges.map(
-        ({ node }, index) =>
-          node?.node_locale?.toLowerCase().includes(intl.locale) && (
-            <div key={index}>
-              <img
-                className={classes.mainImage}
-                src={node.image.fixed.src}
-                alt={node.title}
-              />
-              <Typography className={classes.title}>{node.title}</Typography>
-              <Typography className={classes.description}>
-                {node.description}
-              </Typography>
-            </div>
-          )
-      )}
+      {filteredData.map(({ node }, index) => (
+        <div key={index}>
+          <img
+            className={classes.mainImage}
+            src={node.image.fixed.src}
+            alt={node.title}
+          />
+          <Typography className={classes.title}>{node.title}</Typography>
+          <Typography className={classes.description}>
+            {node.description}
+          </Typography>
+        </div>
+      ))}
     </Slider>
   );
 };

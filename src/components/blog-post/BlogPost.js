@@ -1,7 +1,6 @@
 import React from 'react';
 import { withStyles } from '@material-ui/styles';
 import Typography from '@material-ui/core/Typography';
-import Img from 'gatsby-image';
 
 import styles from './style';
 
@@ -12,14 +11,16 @@ type Props = {
 
 const BlogPost = ({ classes, data }: Props) => (
   <div className={classes.container}>
-    {data.heroImage ? <Img fluid={data.heroImage.fluid} /> : null}
+    {data?.heroImage ? (
+      <img src={data.heroImage.fixed.src} alt={data.title} />
+    ) : null}
     <Typography variant='h2' color='textPrimary'>
-      {data.title}
+      {data?.title}
     </Typography>
     <Typography
       variant='body1'
       dangerouslySetInnerHTML={{
-        __html: data.body.childMarkdownRemark.html,
+        __html: data?.body?.childMarkdownRemark.html,
       }}
     />
   </div>
