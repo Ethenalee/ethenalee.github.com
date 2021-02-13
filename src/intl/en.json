@@ -6,5 +6,8 @@
   "404": "404: Page Not Found",
   "aboutTitle": "About",
   "aboutSubTitle": "Find out more about me",
-  "name":"ethenalee"
+  "name":"ethenalee",
+  "github": "github",
+  "linkedin": "linkedin",
+  "artstore": "society6 art store"
 }

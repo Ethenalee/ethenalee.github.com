@@ -21,7 +21,7 @@ const LinkList = ({ classes, links, intl }: Props) => (
             className={classes.link}>
             <Icon className={classes.linkIcon} />
             <span className={classes.linkText}>
-              <FormattedMessage id='name' />
+              <FormattedMessage id={text} />
             </span>
           </a>
         </li>

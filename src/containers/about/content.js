@@ -18,7 +18,7 @@ const content = {
     },
     {
       to: 'https://society6.com/ethenalee',
-      text: 'art store',
+      text: 'artstore',
       Icon: FaStore,
       newTab: true,
     },

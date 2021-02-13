@@ -6,5 +6,8 @@
   "404": "페이지를 찾을수 없습니다",
   "aboutTitle": "소개란",
   "aboutSubTitle": "에테나에 대해 더 알아보기",
-  "name":"이에네타"
+  "name":"이에네타",
+  "github": "깃허브",
+  "linkedin": "링크드인",
+  "artstore": "소사이어티6 아트 스토어"
 }
