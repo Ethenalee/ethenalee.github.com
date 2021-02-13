@@ -6,19 +6,19 @@ const content = {
   links: [
     {
       to: 'https://github.com/ethenalee',
-      text: 'ethena lee',
+      text: 'github',
       Icon: FaGithub,
       newTab: true,
     },
     {
       to: 'https://www.linkedin.com/in/yeonji900111/',
-      text: 'ethena lee',
+      text: 'linkedin',
       Icon: FaLinkedin,
       newTab: true,
     },
     {
       to: 'https://society6.com/ethenalee',
-      text: 'ethena lee',
+      text: 'art store',
       Icon: FaStore,
       newTab: true,
     },
